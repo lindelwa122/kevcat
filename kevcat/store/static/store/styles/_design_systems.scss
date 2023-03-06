@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Irish+Grover&display=swap');
+
+// THEME COLORS
+:root {
+  --background-color: #fffbe7;
+  --error-message-color: #f00;
+  --main-text-color: #212529;
+  --primary-color: #ffd700;
+  --secondary-color: #3ec70b;
+  --secondary-text-color: #fff;
+}
+
+$bg-color: var(--background-color);
+$error-color: var(--error-message-color);
+$main-text-color: var(--main-text-color);
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+$secondary-text-color: var(--secondary-text-color);
+
+// MEDIA QUERIES
+@mixin for-tablets {
+  @media only screen and (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin for-desktops {
+  @media only screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+// TYPOGRAPHY
+$font-family-primary: 'Irish Grover', cursive;
+$font-family-secondary: 'Inconsolata', monospace;
+
+@mixin body {
+  font-family: $font-family-secondary;
+  font-size: 12px;
+  line-height: 16px;
+
+  @include for-tablets {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  @include for-desktops {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@mixin display {
+  font-family: $font-family-primary;
+  font-size: 26px;
+  line-height: 44px;
+
+  @include for-tablets {
+    font-size: 35px;
+    line-height: 52px;
+  }
+
+  @include for-desktops {
+    font-size: 47px;
+    line-height: 64px;
+  }
+}
+
+@mixin headline {
+  font-family: $font-family-primary;
+  font-size: 18px;
+  line-height: 26px;
+
+  @include for-tablets {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  @include for-desktops {
+    font-size: 26px;
+    line-height: 34px;
+  }
+}
+
+@mixin label {
+  font-family: $font-family-primary;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+
+  @include for-tablets {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  @include for-desktops {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@mixin title {
+  font-family: $font-family-primary;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 20px;
+
+  @include for-tablets {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @include for-desktops {
+    font-size: 22px;
+    line-height: 28px;
+  }
+}
+

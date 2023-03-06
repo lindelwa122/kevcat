@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Irish+Grover&display=swap");
+:root {
+  --background-color: #fffbe7;
+  --error-message-color: #f00;
+  --main-text-color: #212529;
+  --primary-color: #ffd700;
+  --secondary-color: #3ec70b;
+  --secondary-text-color: #fff;
+}
+
+header {
+  background-color: var(--primary-color);
+  padding: 10px 50px;
+  font-family: "Inconsolata", monospace;
+  font-size: 12px;
+  line-height: 16px;
+}
+@media only screen and (min-width: 600px) {
+  header {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  header {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+header img {
+  width: 10%;
+}
+
+nav {
+  gap: 5px;
+}
+
+/*# sourceMappingURL=styles.css.map */
