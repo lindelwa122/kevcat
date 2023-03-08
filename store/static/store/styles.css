@@ -10,7 +10,7 @@
 
 header {
   background-color: var(--primary-color);
-  padding: 10px 50px;
+  padding: 10px 20px;
   font-family: "Inconsolata", monospace;
   font-size: 12px;
   line-height: 16px;
@@ -27,12 +27,54 @@ header {
     line-height: 24px;
   }
 }
+header .brand {
+  font-family: "Irish Grover", cursive;
+  font-size: 18px;
+  line-height: 26px;
+}
+@media only screen and (min-width: 600px) {
+  header .brand {
+    font-size: 22px;
+    line-height: 30px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  header .brand {
+    font-size: 26px;
+    line-height: 34px;
+  }
+}
 header img {
-  width: 10%;
+  width: 50px;
+  border-radius: 50%;
 }
 
 nav {
-  gap: 5px;
+  gap: 10px;
+}
+nav div.active::after {
+  background-color: var(--main-text-color);
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+}
+nav div:hover {
+  cursor: pointer;
+}
+nav div:hover::after {
+  width: 100%;
+}
+nav div::after {
+  background-color: var(--main-text-color);
+  content: "";
+  display: block;
+  height: 1px;
+  transition: width 0.3s;
+  -moz-transition: width 0.3s;
+  -o-transition: width 0.3s;
+  -webkit-transition: width 0.3s;
+  width: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */

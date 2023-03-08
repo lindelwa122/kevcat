@@ -1,0 +1,50 @@
+header {
+  background-color: $primary-color;
+  padding: 10px 20px;
+  @include body;
+
+  .brand {
+    @include headline;
+  }
+
+  img {
+    width: 50px;
+    border-radius: 50%;
+  }
+}
+
+nav {
+  gap: 10px;
+
+  div.active {
+    &::after {
+      background-color: $main-text-color;
+      content: '';
+      display: block;
+      height: 1px;
+      width: 100%;
+    }
+  }
+
+  div {
+    &:hover {
+      cursor: pointer;
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &::after {
+      background-color: $main-text-color;
+      content: '';
+      display: block;
+      height: 1px;
+      transition: width .3s;
+      -moz-transition: width .3s;
+      -o-transition: width .3s;
+      -webkit-transition: width .3s;
+      width: 0;
+    }
+  }
+}
