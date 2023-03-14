@@ -1,0 +1,206 @@
+{% extends 'store/layout.html' %}
+
+{% load static %}
+
+{% block title %} Music {% endblock %}
+
+{% block body %}
+
+<div class='merch-hero d-flex'>
+  <div class='w-60'>
+    <div class='img-wrapper shade'>
+      <img src='https://images.unsplash.com/photo-1615554851544-e6249b92a492' alt='listening-to-music' />
+    </div>
+    <div class='music-hero-text'>
+      <div class='line'>I'm spitting fire, got flames in my mouth</div>
+      <div class='line current'>My rhymes so hot, they make the devil come out</div>
+      <div class='line'>I'm the king of the mic, the ruler of the beat</div>
+    </div>
+  </div>
+  <div class='w-40'>
+    <div class='img-wrapper'>
+      <img src='https://images.unsplash.com/photo-1625786682948-2168238883d2' alt='listening-to-music' />
+    </div>
+  </div>
+</div>
+
+<div class='container'>
+  <section class='row music-intro'>
+    <div class='title text-center'>Music</div>
+
+    <div class='col-12 col-lg-8 hidden hidden-left'>
+      <p>At the heart of KevCat's music and brand lies a deep sense of passion and creativity. With their unique sound and lyrics, KevCat has become synonymous with the cutting edge of modern music. Drawing on a wide range of influences, from classic rock to hip-hop, KevCat's music is a reflection of their commitment to innovation and self-expression. But beyond the music, KevCat's brand is about more than just sound. It's a lifestyle, a way of thinking and feeling that connects with fans on a deep, emotional level. Whether through their live performances or their merchandise, KevCat is dedicated to creating an experience that is both authentic and inspiring. With a focus on quality and style, KevCat is more than just a music artist - they are a movement.</p>
+    </div>
+
+    <div class='col-6  col-lg-4 d-none d-lg-flex justify-content-end hidden hidden-right'>
+      <div class='img-wrapper'>
+        <img src='https://images.unsplash.com/photo-1495175448924-1d9a30c90a42' alt='Picture by Konstantine Dyadyun' />
+      </div>
+    </div>
+  </section>
+
+  <section class='row hits-section'>
+    <div class='text-center title'>New Hits</div>
+    <div class='col-12 col-md-12 col-lg-6 mb-5 mb-lg-0 hidden hidden-left'>
+
+      <div class='song-wrapper'>
+        <div class='song'>
+          <img src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e' alt='song-cover' class='mb-3 new-hit'/>
+          <div class='song-name'>Song Name</div>
+          <div data-playing='false' class='pause-play-toggle'><i class='bi bi-play-fill'></i></div>
+        </div>
+          <audio  class='new-hit' controls>
+            <source src='{% static "store/audio/music.mp3" %}'>
+          </audio>
+      </div>
+
+    </div>
+    <div class='col-12 col-md-12 col-lg-6 d-flex flex-column align-items-center small-music-container justify-content-between hidden hidden-right'>
+      <div class='d-flex justify-content-end mb-5 mb-lg-0 right-song-container'>
+        <div class='song-wrapper font-small'>
+          <div class='song'>
+            <img src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e' alt='song-cover' class='mb-3' />
+            <div class='song-name'>Song Name</div>
+            <div data-playing='false' class='pause-play-toggle'><i class='bi bi-play-fill'></i></div>
+          </div>
+          <audio controls>
+            <source src='{% static "store/audio/music.mp3" %}'>
+          </audio>
+        </div>
+
+        <div class='song-wrapper font-small d-flex flex-column align-items-center'>
+          <div class='song'>
+            <img src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e' alt='song-cover' class='mb-3'/>
+            <div class='song-name'>Song Name</div>
+            <div data-playing='false' class='pause-play-toggle'><i class='bi bi-play-fill'></i></div>
+          </div>
+            <audio controls>
+              <source src='{% static "store/audio/music.mp3" %}'>
+            </audio>
+        </div>
+      </div>
+
+      <button class='d-flex align-items-center listen-spotify'>
+        <span class='me-2'>Listen on Spotify</span>
+        <i class='bi bi-arrow-right'></i>
+      </button>
+    </div>
+  </section>
+
+  <section class='more-songs-section'>
+    <div class='text-center title'>More Songs</div>
+
+    <div class='row row-cols-2 row-cols-lg-4 gy-5'>
+      <div class='col hidden hidden-center'>
+        <div class='song-wrapper'>
+          <div class='song'>
+            <img src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e' alt='song-cover' class='mb-3'/>
+            <div class='song-name'>Song Name</div>
+            <div data-playing='false' class='pause-play-toggle'><i class='bi bi-play-fill'></i></div>
+          </div>
+            <audio controls>
+              <source src='{% static "store/audio/music.mp3" %}'>
+            </audio>
+        </div>
+      </div>
+      <div class='col hidden hidden-center'>
+        <div class='song-wrapper'>
+          <div class='song'>
+            <img src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e' alt='song-cover' class='mb-3'/>
+            <div class='song-name'>Song Name</div>
+            <div data-playing='false' class='pause-play-toggle'><i class='bi bi-play-fill'></i></div>
+          </div>
+            <audio controls>
+              <source src='{% static "store/audio/music.mp3" %}'>
+            </audio>
+        </div>
+      </div>
+      <div class='col hidden hidden-center'>
+        <div class='song-wrapper'>
+          <div class='song'>
+            <img src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e' alt='song-cover' class='mb-3'/>
+            <div class='song-name'>Song Name</div>
+            <div data-playing='false' class='pause-play-toggle'><i class='bi bi-play-fill'></i></div>
+          </div>
+            <audio controls>
+              <source src='{% static "store/audio/music.mp3" %}'>
+            </audio>
+        </div>
+      </div>
+      <div class='col hidden hidden-center'>
+        <div class='song-wrapper'>
+          <div class='song'>
+            <img src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e' alt='song-cover' class='mb-3'/>
+            <div class='song-name'>Song Name</div>
+            <div data-playing='false' class='pause-play-toggle'><i class='bi bi-play-fill'></i></div>
+          </div>
+            <audio controls>
+              <source src='{% static "store/audio/music.mp3" %}'>
+            </audio>
+        </div>
+      </div>
+      <div class='col hidden hidden-center'>
+        <div class='song-wrapper'>
+          <div class='song'>
+            <img src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e' alt='song-cover' class='mb-3'/>
+            <div class='song-name'>Song Name</div>
+            <div data-playing='false' class='pause-play-toggle'><i class='bi bi-play-fill'></i></div>
+          </div>
+            <audio controls>
+              <source src='{% static "store/audio/music.mp3" %}'>
+            </audio>
+        </div>
+      </div>
+      <div class='col hidden hidden-center'>
+        <div class='song-wrapper'>
+          <div class='song'>
+            <img src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e' alt='song-cover' class='mb-3'/>
+            <div class='song-name'>Song Name</div>
+            <div data-playing='false' class='pause-play-toggle'><i class='bi bi-play-fill'></i></div>
+          </div>
+            <audio controls>
+              <source src='{% static "store/audio/music.mp3" %}'>
+            </audio>
+        </div>
+      </div>
+      <div class='col hidden hidden-center'>
+        <div class='song-wrapper'>
+          <div class='song'>
+            <img src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e' alt='song-cover' class='mb-3'/>
+            <div class='song-name'>Song Name</div>
+            <div data-playing='false' class='pause-play-toggle' data-playing='false'><i class='bi bi-play-fill'></i></div>
+          </div>
+            <audio controls>
+              <source src='{% static "store/audio/music.mp3" %}'>
+            </audio>
+        </div>
+      </div>
+      <div class='col hidden hidden-center'>
+        <div class='song-wrapper'>
+          <div class='song'>
+            <img src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e' alt='song-cover' class='mb-3'/>
+            <div class='song-name'>Song Name</div>
+            <div data-playing='false' class='pause-play-toggle'><i class='bi bi-play-fill'></i></div>
+          </div>
+            <audio controls>
+              <source src='{% static "store/audio/music.mp3" %}'>
+            </audio>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+</div>
+
+<script type='text/javascript'>
+  document.querySelector('.music-nav').classList.add('active');
+
+  document.querySelector('.listen-spotify').addEventListener('click', () => {
+    window.location.href = 'https://open.spotify.com/artist/0Uy8T1f9ABGEq1pXzYEmv0';
+  });
+</script>
+
+<script type='text/javascript' src='{% static "store/js/music.js" %}'></script>
+
+{% endblock %}

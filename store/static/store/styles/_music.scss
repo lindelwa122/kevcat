@@ -1,0 +1,156 @@
+section.music-intro {
+  .img-wrapper {
+    width: 80%;
+    aspect-ratio: 1/1;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+section.hits-section {
+  audio.new-hit, img.new-hit {
+    width: 100%;
+  }
+
+  audio, img {
+    width: 100%;
+    border-radius: 10px;
+
+    @include for-desktops {
+      width: 100%;
+    }
+  }
+
+  .right-song-container {
+    gap: 20px;
+  }
+}
+
+.song {
+  position: relative;
+}
+
+.song-name {
+  position: absolute;
+  left: 10%;
+  bottom: 11%;
+  font-size: smaller;
+  @include title;
+
+  @include for-desktops {
+    font-size: 22px;
+  }
+}
+
+.song-wrapper.font-small {
+  .song-name {
+    font-size: small !important;
+  }
+}
+
+section.more-songs-section {
+  audio, img {
+    width: 100%;
+    border-radius: 10px;
+  }
+}
+
+.music-hero-text {
+  position: absolute;
+  top: 30%;
+  left: 7%;
+  text-align: center;
+  height: 50%;
+  color: $secondary-text-color;
+  overflow: hidden;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  @include headline;
+
+  @include for-desktops {
+    left: 20%;
+    text-align: left;
+  }
+
+  .line {
+    opacity: 0.7;
+    transition: all 1s ease-in-out;
+
+    &.current {
+      opacity: 1;
+      // transition: all 0.2s ease-in-out;
+    }
+
+    &.move-up {
+      transform: translateY(-100%);
+      transition: all 1s ease-in-out;
+    }
+
+    &.fade-out {
+      opacity: 0;
+      transition: all 1s ease-in-out;
+    }
+  }
+}
+
+.more-songs-section {
+  .pause-play-toggle  {
+    .bi::before {
+      font-size: 80px;
+    }
+  }
+}
+
+.small-music-container {
+  .pause-play-toggle {
+    .bi::before {
+      font-size: 80px;
+    }
+  }
+}
+
+.pause-play-toggle {
+  width: 100%;
+  position: absolute;
+  height: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+
+  .bi {
+    color: rgba($color: #e4e4e4, $alpha: 0.6);
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &::before {
+      font-size: 100px;
+    }
+  }
+}
+
+.merch-section {
+  .img-wrapper {
+    overflow: hidden;
+  }
+
+  img {
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.3);
+      filter: drop-shadow(25%);
+    }
+  }
+}

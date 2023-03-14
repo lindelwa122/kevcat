@@ -1,9 +1,95 @@
 {% extends 'store/layout.html' %}
 
+{% load static %}
+
+{% load store_extras %}
+
 {% block title %} Home {% endblock %}
 
 {% block body %}
 
-<h1>Hello, world!</h1>
+<div class='container'>
+  <section class='row hero-section align-items-center'>
+    <div class='col-12 col-md-6 d-flex justify-content-center mb-5 mb-md-0'>
+      <div class='img-wrapper'>
+        <img class='img-1' src='https://images.unsplash.com/photo-1545224144-b38cd309ef69' alt='Kevin Perfoming'>
+      </div>
+
+      <div class='img-wrapper'>
+        <img class='img-2' src='https://images.unsplash.com/photo-1574232861722-d1e837e4b0f0' alt='Kevin Perfoming'>
+      </div>
+    </div>
+    <div class='col-12 col-md-6 hero-text text-center mt-5 mt-md-0'>Feel the beat, embrace the rhythm, and join the KevCat experience.</div>
+  </section>
+
+  <section class='row'>
+    <div class='col d-flex justify-content-center'>
+      <button class='d-flex align-items-center listen-spotify'>
+        <span class='me-2'>Listen on Spotify</span>
+        <i class='bi bi-arrow-right'></i>
+      </button>
+    </div>
+  </section>
+
+  <section class='row row-cols-2 row-cols-md-4 gy-5 merch-section'>
+    {% for product in products %}
+      <div class='col hidden hidden-center'>
+        <div class='img-wrapper'>
+          <img src='{{ product.image|image }}' alt='merch' />
+        </div>
+        <div class='info-container'>
+          <div class='name'>{{ product.name }}</div>
+          <div class='price'>R{{ product.price|floatformat:2 }}</div>
+        </div>
+      </div>
+    {% endfor %}
+  </section>
+
+  <section class='row'>
+    <div class='col d-flex justify-content-center'>
+      <button class='d-flex align-items-center buy'>
+        <span class='me-2'>Buy now!</span>
+        <i class='bi bi-arrow-right'></i>
+      </button>
+    </div>
+  </section>
+
+  <section class='row info-section'>
+    <div class='col-12 col-md-6 d-flex flex-column align-items-center hidden hidden-left mb-5 mb-md-0'>
+      <p>Welcome to the official merchandise and music store for KevCat! Here, you can find everything from exclusive music releases to limited edition t-shirts, hats, and accessories. We pride ourselves on providing our fans with high-quality, unique merchandise that reflects the spirits and style of our music. With a wide range of sizes and styles, there's something for everyone in our collection. And as always, thank for supporting KevCat. We couldn't do it without you!</p>
+      <div>
+        <button class='d-flex align-items-center listen'>
+          <span class='me-2'>Listen now!</span>
+          <i class='bi bi-arrow-right'></i>
+        </button>
+      </div>
+    </div>
+
+    <div class='col-12 col-md-6 d-flex flex-column align-items-end hidden hidden-right'>
+      <img src='{% static "store/images/brand/logo.jpg" %}' alt='song-cover' class='mb-3'/>
+      <audio class='d-block' controls>
+        <source src='{% static "store/audio/music.mp3" %}'>
+      </audio>
+    </div>
+  </section>
+</div>
+
+<script type='text/javascript'>
+  document.querySelector('.home-nav').classList.add('active');
+
+  document.querySelector('.listen-spotify').addEventListener('click', () => {
+    window.location.href = 'https://open.spotify.com/artist/0Uy8T1f9ABGEq1pXzYEmv0';
+  });
+
+  document.querySelector('.buy').addEventListener('click', () => {
+    window.location.href = '/merch';
+  });
+
+  document.querySelector('.listen').addEventListener('click', () => {
+    window.location.href = '/music';
+  });
+</script>
+
+<script src='{% static "store/js/index.js" %}'></script>
 
 {% endblock %}

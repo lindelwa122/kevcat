@@ -1,0 +1,133 @@
+.merch-hero {
+  height: 100vw;
+  background-color: #000;
+
+  @include for-tablets {
+    height: 45vw;
+  }
+
+  @include for-desktops {
+    height: 30vw;
+  }
+
+  .shade {
+    position: relative;
+
+    &::after { /* add ::after pseudo-element */
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(270deg, #000000 23.96%, rgba(0, 0, 0, 0) 100%);
+    }
+  }
+
+  .img-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 1;
+      transition: all 1s ease-in-out;
+
+      &.next-img {
+        opacity: 0;
+      }
+    }
+  }
+
+  .w-60 {
+    width: 100%;
+    position: relative;
+
+    @include for-desktops {
+      width: 60%;
+    }
+
+    .img-wrapper {
+      width: 80%;
+    }
+  }
+
+  .w-40 {
+    width: 40%;
+    position: relative;
+    display: none;
+
+    @include for-desktops {
+      display: inline-block;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 30%;
+      transform-origin: top left;
+      transform: skew(-20deg);
+      background-color: #000;
+      z-index: 999;
+    }
+  }
+
+  .carousel {
+    position: relative;
+  }
+
+  .carousel-controls {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 25px;
+    background-color: $primary-color;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+
+    div {
+      height: 100%;
+      background-color: $bg-color;
+      aspect-ratio: 1;
+      border-radius: 50%;
+
+      &:hover {
+        cursor: pointer;
+        background-color: rgba($color: #000000, $alpha: 0.4);
+      }
+    }
+
+    div.selected {
+      background-color: #000;
+    }
+  }
+}
+
+.merch-hero-text {
+  position: absolute;
+  top: 40%;
+  left: 7%;
+  text-align: center;
+  color: $secondary-text-color;
+  z-index: 9999;
+  transition: all 0.5s ease-in-out;
+  @include headline;
+
+  @include for-desktops {
+    left: 20%;
+    text-align: left;
+  }
+
+  &:hover {
+    text-shadow: 10px 10px 5px #fff;
+    transform: scale(1.2);
+  }
+}

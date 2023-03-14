@@ -1,0 +1,41 @@
+button {
+  background-color: $primary-color;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  transition: all 0.25s ease-in-out;
+
+  @include label;
+
+  &:hover,
+  &:focus {
+    box-shadow: inset 0 -3.25em 0 0 $secondary-color;
+    transform: scale(1.1);
+  }
+
+  .bi {
+    font-size: 1.5em;
+  }
+}
+
+section {
+  padding: 20px 0;
+
+  @include for-tablets {
+    padding: 30px;
+  }
+
+  @include for-desktops {
+    padding: 50px 0;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $main-text-color;
+  
+  &:hover {
+    color: $main-text-color;
+  }
+}

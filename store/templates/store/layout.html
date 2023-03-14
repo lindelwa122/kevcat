@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,19 +16,20 @@
   <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js'
     integrity='sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V'
     crossorigin='anonymous'></script>
-    <link rel='stylesheet' href='../../static/store/styles.css'>
+  <link rel='stylesheet' href='../../static/store/styles.css'>
   <title>KevCat: {% block title %}{% endblock %}</title>
 </head>
+
 <body>
-  
+
   <header class='d-flex justify-content-between align-items-center'>
     <div class='brand d-flex align-items-center'>
-      <span class='ms-2'>KevCat</span>
+      <span class='ms-2'><a href='{% url "store:index" %}'>KevCat</a></span>
     </div>
     <nav class='d-flex'>
-      <div>Home</div>
-      <div>Merch</div>
-      <div>Music</div>
+      <div class='home-nav'><a href='{% url "store:index" %}'>Home</a></div>
+      <div class='merch-nav'><a href='{% url "store:merch" %}'>Merch</a></div>
+      <div class='music-nav'><a href='{% url "store:music" %}'>Music</a></div>
     </nav>
   </header>
 
@@ -36,27 +38,63 @@
   </main>
 
   <footer>
-    <div>
-      <div class='font-title'>Get In Touch</div>
+    <div class='d-flex flex-column flex-md-row align-items-center align-items-md-start justify-content-between mb-5 flex-wrap w-100'>
       <div>
-        <i class="bi bi-instagram"></i>
-        <span class="ms-2">Instagram</span>
+        <div class='d-flex flex-column align-items-center align-items-md-start mb-5'>
+          <div class='title'>Get In Touch</div>
+          <div class='d-flex align-items-center ms-1'>
+            <i class='bi bi-facebook'></i>
+            <span class='ms-2'><a href='https://web.facebook.com/profile.php?id=100007176047901' target='_blank'>Facebook</a></span>
+          </div>
+          <div class='d-flex align-items-center ms-1'>
+            <i class='bi bi-instagram'></i>
+            <span class='ms-2'><a href='https://www.instagram.com/kevcat_official/' target='_blank'>Instagram</a></span>
+          </div>
+          <div class='d-flex align-items-center ms-1'>
+            <i class='bi bi-whatsapp'></i>
+            <span class='ms-2'><a href='https://wa.me/27724403980'>WhatsApp</a></span>
+          </div>
+        </div>
+  
+        <div class='d-flex flex-column align-items-center align-items-md-start mb-5'>
+          <div class='title'>Our Policies</div>
+          <div class='d-flex align-content-center ms-1'>
+            <a href='{% url "store:privacy_policy" %}'>Privacy Policy</a>
+          </div>
+          <div class='d-flex align-content-center ms-1'>
+            <a href='{% url "store:refund_policy" %}'>Refund Policy</a>
+          </div>
+          <div class='d-flex align-content-center ms-1'>
+            <a href='{% url "store:shipping_policy" %}'>Shipping Policy</a>
+          </div>
+        </div>
       </div>
-      <div>
-        <i class="bi bi-instagram"></i>
-        <span class="ms-2">Instagram</span>
-      </div>
-      <div>
-        <i class="bi bi-instagram"></i>
-        <span class="ms-2">Instagram</span>
-      </div>
-      <div>
-        <i class="bi bi-instagram"></i>
-        <span class="ms-2">Instagram</span>
+  
+      <div class='text-center'>
+        <div class='brand'>The Next Big Thing</div>
+        <div>[Logo Goes Here]</div>
       </div>
     </div>
-    <div></div>
+
+    <div class='copyright'>&copy KevCat 2023</div>
   </footer>
 
 </body>
+
+<script type='text/javascript'>
+  const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.remove('hidden-center', 'hidden-left', 'hidden-right');
+    } 
+  });
+});
+
+const elementToObserve = document.querySelectorAll('.hidden');
+elementToObserve.forEach((element) => observer.observe(element));
+
+</script>
+
+<script type='text/javascript' src='{% static "store/js/script.js" %}'></script>
+
 </html>

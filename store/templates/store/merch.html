@@ -1,0 +1,125 @@
+{% extends 'store/layout.html' %}
+
+{% load static %}
+
+{% load store_extras %}
+
+{% block title %} Merch {% endblock %}
+
+{% block body %}
+
+<div class='merch-hero d-flex'>
+  <div class='w-60'>
+    <div class='img-wrapper shade'>
+      <img src='https://images.unsplash.com/photo-1470225620780-dba8ba36b745' alt='listening-to-music' />
+    </div>
+    <div class='merch-hero-text'>Experience the magic of KevCat and discover a new level of quality and style.</div>
+  </div>
+  <div class='w-40 carousel'>
+    <div class='img-wrapper'>
+      <img class='carousel-img' src='https://images.unsplash.com/photo-1620578077783-33e254311182' alt='listening-to-music' />
+    </div>
+    <div class='carousel-controls'>
+      <div class='prev carousel-control'></div>
+      <div class='current selected carousel-control'></div>
+      <div class='next carousel-control'></div>
+    </div>
+  </div>
+</div>
+
+<div class='container'>
+
+  <section class='merch-section beanies'>
+    <div class='title text-center'>Beanies</div>
+    <div class='row row-cols-2 row-cols-md-4 gy-5 '>
+      {% for beanie in beanies %}
+        <div class='col hidden hidden-center'>
+          <div class='img-wrapper'>
+            <img class='skeleton' src='{{ beanie.image|image }}' alt='merch' loading='lazy'/>
+          </div>
+          <div class='info-container'>
+            <div class='name'>{{ beanie.name }}</div>
+            <div class='price'>R{{ beanie.price|floatformat:2 }}</div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class='merch-section caps'>
+    <div class='title text-center'>Caps</div>
+    <div class='row row-cols-2 row-cols-md-4 gy-5 '>
+      {% for cap in caps %}
+        <div class='col hidden hidden-center'>
+          <div class='img-wrapper'>
+            <img class='skeleton' src='{{ cap.image|image }}' alt='merch' loading='lazy'/>
+          </div>
+          <div class='info-container'>
+            <div class='name'>{{ cap.name }}</div>
+            <div class='price'>R{{ cap.price|floatformat:2 }}</div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class='merch-section hoodies'>
+    <div class='title text-center'>Hoodies</div>
+    <div class='row row-cols-2 row-cols-md-4 gy-5'>
+      {% for hoodie in hoodies %}
+        <div class='col hidden hidden-center'>
+          <div class='img-wrapper'>
+            <img class='skeleton' src='{{ hoodie.image|image }}' alt='merch' loading='lazy' />
+          </div>
+          <div class='info-container'>
+            <div class='name'>{{ hoodie.name }}</div>
+            <div class='price'>R{{ hoodie.price|floatformat:2 }}</div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class='merch-section sweaters'>
+    <div class='title text-center'>Sweaters</div>
+    <div class='row row-cols-2 row-cols-md-4 gy-5 '>
+      {% for sweater in sweaters %}
+        <div class='col hidden hidden-center'>
+          <div class='img-wrapper'>
+            <img class='skeleton' src='{{ sweater.image|image }}' alt='merch' loading='lazy'/>
+          </div>
+          <div class='info-container'>
+            <div class='name'>{{ sweater.name }}</div>
+            <div class='price'>R{{ sweater.price|floatformat:2 }}</div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class='merch-section t-shirts'>
+    <div class='title text-center'>T-shirts</div>
+    <div class='row row-cols-2 row-cols-md-4 gy-5 '>
+      {% for tshirt in tshirts %}
+        <div class='col hidden hidden-center'>
+          <div class='img-wrapper'>
+            <img class='skeleton' src='{{ tshirt.image|image }}' alt='merch' loading='lazy'/>
+          </div>
+          <div class='info-container'>
+            <div class='name'>{{ tshirt.name }}</div>
+            <div class='price'>R{{ tshirt.price|floatformat:2 }}</div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+</div>
+
+<script type='text/javascript'>
+  document.querySelector('.merch-nav').classList.add('active');
+</script>
+
+<script src='{% static "store/js/merch.js" %}'></script>
+
+{% endblock %}

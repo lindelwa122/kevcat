@@ -1,3 +1,7 @@
+body {
+  @include body;
+}
+
 header {
   background-color: $primary-color;
   padding: 10px 20px;
@@ -46,5 +50,80 @@ nav {
       -webkit-transition: width .3s;
       width: 0;
     }
+  }
+}
+
+main {
+  background-color: $bg-color;
+}
+
+footer {
+  background-color: $primary-color;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  // gap: 20vh;
+  
+  .copyright {
+    font-size: smaller;
+  }
+
+  .brand {
+    @include headline;
+  }
+
+  .logo {
+    width: 5%;
+    height: auto;
+    border-radius: 50%;
+  }
+
+  .title {
+    @include title;
+    padding: 0 5px 1px 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid $main-text-color;
+  }
+}
+
+.hidden {
+  transition: all 1s ease-in-out;
+  transform: translateX(0);
+}
+
+.hidden-left {
+  opacity: 0;
+  transform: translateX(-50%);
+}
+
+.hidden-right {
+  opacity: 0;
+  transform: translateX(50%);
+}
+
+.hidden-center {
+  opacity: 0;
+}
+
+audio {
+  display: none;
+}
+
+.skeleton {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(214, 214, 214);
+  animation: animate-skeleton 1s ease-in-out infinite alternate forwards;
+}
+
+@keyframes animate-skeleton {
+  from {
+    background-color: rgb(214, 214, 214);
+  }
+
+  to {
+    background-color: rgb(255, 255, 255);
   }
 }

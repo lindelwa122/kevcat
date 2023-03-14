@@ -1,0 +1,79 @@
+.hero-section {
+  padding-top: 100px !important;
+
+  .img-wrapper {
+    width: 80%;
+    aspect-ratio: 1/1.2;
+
+    @include for-tablets {
+      width: 40%;
+    }
+
+    @include for-desktops {
+      width: 30%;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: all 1s ease-in-out;
+  }
+
+  img.img-1 {
+    transform: rotate(-25deg) translate(50px, 45px);
+    position: relative;
+    box-shadow: 20px -15px 12px rgba($color: #000000, $alpha: .5);
+    z-index: 9999999;
+
+    &:hover {
+      transform: rotate(5deg) translate(30px, 15px);
+    }
+  }
+  
+  img.img-2 {
+    transform: rotate(-20deg) translate(-60px, -35px);
+
+    &:hover {
+      transform: rotate(0deg) translate(80px, 30px);
+    }
+  }
+}
+
+.hero-text {
+  @include headline;
+}
+
+.merch-section {
+  .img-wrapper {
+    aspect-ratio: 1/1.2;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+section.info-section {
+  audio, img {
+    width: 100%;
+
+    @include for-tablets {
+      width: 50%;
+    }
+  }
+
+  img {
+    border-radius: 10px;
+  }
+}
+
+
+.title {
+  @include headline;
+  margin-bottom: 1.1em;
+}
