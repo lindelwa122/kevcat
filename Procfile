@@ -1,0 +1,1 @@
+web: gunicorn kevcat.wsgi --log-file -
